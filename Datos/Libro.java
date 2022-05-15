@@ -1,6 +1,7 @@
 package Datos;
 
-public class Libros {
+public class Libro {
+    public int id;
     public String tituto;
     public String autor;
     public int anno;
