@@ -1,25 +1,39 @@
 package Datos;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
-import com.opencsv.CSVReader;
+public class Archivo {
 
-import java.io.FileReader;
-import java.io.Reader;
+    private String nombre;
+    private File internalFile;
 
-public class Leer_Inventario {
-    CSVReader reader = null;
-try{
-//parsing a CSV file into CSVReader class constructor
-        reader = new CSVReader(new FileReader("F:\\CSVDemo.csv"));
-        String [] nextLine;
-//reads one line at a time
-        while ((nextLine = reader.readNext()) != null) {
-            for(String token : nextLine) {
-                System.out.print(token);
+    public Archivo(String nombre) {
+        this.nombre = nombre;
+        internalFile = new File(nombre);
+    }
+
+    public List<Libro> leerDatos() throws IOException {
+        List<Libro> libros = new ArrayList<Libro>();
+        File r = new File("./Ejemplo.txt");
+        r.createNewFile();
+        Scanner obj = null;
+        try {
+            obj = new Scanner(internalFile);
+            while (obj.hasNextLine()) {
+                System.out.println(obj.nextLine());
+
             }
-            System.out.print("\n");
+        } catch (FileNotFoundException e) {
+            System.out.println("El archivo no existe!");
+        } finally {
+            System.out.println("Adios!");
         }
-    }catch (Exception e){
-        e.printStackTrace();
+        return libros;
     }
 }
+
