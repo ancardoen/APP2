@@ -7,6 +7,6 @@ import com.opencsv.CSVWriter;
 
 public class Escribir_Inventario {
     private void doWrite() throws IOException{
-        CSVWriter writer = new CSVWriter(new FileWriter("inventario APP2.csv"));
+        CSVWriter writer = new CSVWriter(new FileWriter("inventario.csv"));
     }
 }
