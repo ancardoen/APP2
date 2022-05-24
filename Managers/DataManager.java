@@ -28,6 +28,7 @@ public class DataManager {
         this.data = data;
     }
 
-
-
+    public HashSet<Libro> getData() {
+        return data;
+    }
 }

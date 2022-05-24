@@ -6,8 +6,6 @@ public class Libro {
     public Libro() {
     }
 
-    @CsvBindByName(column = "id")
-    private String id;
     @CsvBindByName(column = "titulo")
     private String titulo;
     @CsvBindByName(column = "autor")
@@ -25,44 +23,32 @@ public class Libro {
     @CsvBindByName(column = "sede")
     private String sede;
 
-    public String getId() {
-        return id;
-    }
 
     public String getTitulo() {
         return titulo;
     }
-
     public String getAutor() {
         return autor;
     }
-
     public String getAnno() {
         return anno;
     }
-
     public String getEstante_numero() {
         return estante_numero;
     }
-
     public String getEstante_seccion() {
         return estante_seccion;
     }
-
     public String getPiso() {
         return piso;
     }
-
     public String getEdificio() {
         return edificio;
     }
-
     public String getSede() {
         return sede;
     }
-    public void setId(String id) {
-        this.id = id;
-    }
+
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
